@@ -1,0 +1,17 @@
+# Arquivos de backup
+*.bak
+
+# Pastas e arquivos gerados pelo Quartus
+db/
+incremental_db/
+output_files/
+*.rpt
+*.summary
+*.jdi
+*.sof
+*.pof
+*.done
+*.qarlog
+*.qws
+timing_analysis/
+simulation/
