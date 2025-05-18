@@ -1,0 +1,20 @@
+LAB04 - CRONÔMETRO COM BOTÃO START/STOP E BOTÃO RESET
+
+1. Implemente um sinal com frequência de 1 kHz a partir do sinal de 50 MHz do oscilador da Placa DE10 que servirá de base temporal para um cronometro digital (pode utilizar divisores de frequencia com flip-flops ou o arquivo time_referencing.vhdl).
+2. Implemente um contador de 000 ms a 999 ms. Conecte os dígitos deste contador nos display de 7 segmentos HEX2-HEX1-HEX0 utilizando conversores HEXto7SEG criado por você  em laboratório anterior.
+3. Implemente um contador de 00 a 59 s. Conecte os dígitos deste contador nos display de 7 segmentos HEX4-HEX5 utilizando conversores HEXto7SEG criado por você  em laboratório anterior.
+4. Implemente um contador de 0 a 9 minutos. Conecte o digito deste contador no display de 7 segmentos HEX6
+
+REALIZAR OS ITENS 1 a 4 UTILIZANDO CONTADORES  SÍCRONOS (teste as suas duas soluções adicionando botões de controle como abaixo)
+5. Com os itens 1 a 4 integrados, insira 
+5.1. um botão de controle (push button 0 da placa DE10) que permita a ação START-STOP do cronômetro. Observe que Parar é diferente de ZERAR o cronometro
+5.2. um botão de RESET  (push button 1 da placa DE10) que quando acionado coloque o cronometro no valor inicial 0:00:000
+
+6. Faça um circuito combinacional que PAUSE automaticamente (PAUSAR é diferente de RESET) o seu cronometro quando o mesmo atinge o número equivalente aos 6 digitos menos significativos de seu R.A. (MEU RA: 2602687) 
+
+7. Para testar o seu circuito e fazer a demonstração desenvolva um seletor de base temporal (e.g., SW0=0 base temporal igual a 1 kHz, SW0=1 base temporal igual a 20a80 kHz).
+
+ENTREGA E DEMONSTRAÇÃO:
+1. Em aula de laboratório, demonstre  ao professor o seu circuito funcionando e responda eventuais questionamentos sobre o projeto
+
+2. Compacte o diretório do projeto após a avaliação do professor e submeta aqui.
