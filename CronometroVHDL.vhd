@@ -4,11 +4,10 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY CronometroVHDL IS  
     PORT (
         clk : IN  STD_LOGIC;
-        clk_test : IN STD_LOGIC;  -- Clock de entrada
         reset : IN  STD_LOGIC;
         button_stop : IN  STD_LOGIC;
-        seletorclk : IN  STD_LOGIC;  
-        saida1, saida2, saida3, saida4, saida5, saida6 : out STD_LOGIC_VECTOR(3 DOWNTO 0);
+        seletorclk : IN  STD_LOGIC;
+        ledclk : OUT STD_LOGIC;
         saidahex0, saidahex1, saidahex2, saidahex3, saidahex4, saidahex5 : out STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 END ENTITY CronometroVHDL;
@@ -38,14 +37,14 @@ ARCHITECTURE comportamental OF CronometroVHDL IS
     
     component Timing_Reference is
         port (
-            CLK: in std_logic; -- Pin connected to P11 (N14)
+            CLK: in std_logic; 
             CLK_OUTHZ: out std_logic
         );
     end component Timing_Reference;
 
     component Timing_Reference60k is
         port (
-            CLK: in std_logic; -- Pin connected to P11 (N14)
+            CLK: in std_logic; 
             CLK_OUTHZ: out std_logic
         );
     end component Timing_Reference60k;
@@ -67,48 +66,39 @@ ARCHITECTURE comportamental OF CronometroVHDL IS
 
     SIGNAL clk_outHz1k : STD_LOGIC; -- Sinal de clock de saída
     SIGNAL clk_outHz60k : STD_LOGIC; -- Sinal de clock de saída 60kHz
-    SIGNAL clk_outHz : STD_LOGIC; -- Sinal de clock de saída 60kHz
+    SIGNAL clk_outHz : STD_LOGIC; -- Sinal de clock de saída convertido
 
     SIGNAL autopause_on : STD_LOGIC := '0'; -- Sinal de pausa automática
     SIGNAL autopause_estate: STD_LOGIC := '0'; -- Sinal de estado de pausa automática
-    SIGNAL estado_stop : STD_LOGIC := '0'; -- Sinal de estado de parada
+    SIGNAL estado_stop : STD_LOGIC := '1'; -- Sinal de estado de parada
     SIGNAL sinal_anterior : std_logic := '1'; -- Sinal anterior para detectar borda de subida
     SIGNAL stop: std_logic := '0'; -- Sinal de parada
 
 BEGIN
 
-    process(seletorclk)
+    
+    ledclk <= seletorclk; -- Conecta o clock de saída ao ledclk
+    process(clk, reset)
     begin
-        if seletorclk = '0' then
-            clk_outHz <= clk_outHz1k; -- Clock de 1kHz
-        else
-            clk_outHz <= clk_outHz60k; -- Clock de 60kHz
-        end if;
-    end process;
-
-    process(clk_test, reset)
-    begin
-        if reset = '1' then
-            estado_stop    <= '0';
-            sinal_anterior <= '1'; -- Assumindo que o botão em estado liberado é '1' (ativo baixo)
-            autopause_on   <= '0'; -- Garante que autopause_on seja resetado
-        elsif rising_edge(clk_test) then
-            -- Atualiza o estado anterior do botão para detecção de borda no próximo ciclo
-            -- É importante que esta atualização ocorra após o uso de sinal_anterior para a detecção de borda atual.
-            
+        if reset = '0' then -- botão ativado no baixo
+            estado_stop    <= '1'; --deixa o cronometro parado
+            sinal_anterior <= '1'; -- botão inicia em um
+            autopause_on   <= '0'; -- autopause desligado no reset
+        elsif rising_edge(clk) then
+				if seletorclk = '0' then
+					clk_outHz <= clk_outHz1k;
+				else
+					clk_outHz <= clk_outHz60k;
+				end if;
+				
             if button_stop = '0' and sinal_anterior = '1' then
-                estado_stop  <= not estado_stop;
-                autopause_on <= '0'; -- Pressionar o botão START/STOP limpa o auto-pause
+                estado_stop  <= not estado_stop; -- Alterna o estado de parada
+                autopause_on <= '0'; -- Limpa o latch de auto-pause
             else
-                -- Se o botão não foi pressionado para limpar o autopause_on:
-                -- Verifica se a condição de auto-pause deve ser ativada.
-                -- O auto-pause só é ativado se a contagem RA for atingida E
-                -- o cronômetro estiver no estado "rodando" (estado_stop = '0').
+                -- verifica o estado do RA no display e verifica se esta andando
                 if autopause_estate = '1' and estado_stop = '0' then
                     autopause_on <= '1'; -- Ativa o latch de auto-pause
                 end if;
-                -- Uma vez que autopause_on é '1', ele permanecerá '1' (comportamento de latch)
-                -- até ser limpo pelo botão START/STOP ou por um reset global.
             end if;
             sinal_anterior <= button_stop; -- Atualiza o sinal anterior
         end if;
@@ -117,33 +107,33 @@ BEGIN
 
     autopause_estate <= '1' WHEN  s_q_c95 = "0110" AND -- Min(saida6) = 6
                            s_q_c51 = "0000" AND -- SecTens(saida5) = 0
-                           s_q_c94 = "0010" AND -- SecUnits(saida4) = 2
-                           s_q_c93 = "0110" AND -- msHundreds(saida3) = 6
-                           s_q_c92 = "1000" AND -- msTens(saida2) = 8
-                           s_q_c91 = "0110"     -- msUnits(saida1) = 6 aqui temos que o latch do autopause ativa na mesma hora que o contador, então para parar no momento certo desconsideramos o clock com o 7
+                           s_q_c94 = "0010" AND -- SecUnidade(saida4) = 2
+                           s_q_c93 = "0110" AND -- mscentena(saida3) = 6
+                           s_q_c92 = "1000" AND -- msdezena(saida2) = 8
+                           s_q_c91 = "0111"     -- msUnidade(saida1) = 7 
                             ELSE '0';
 
 
 
-    stop <= estado_stop or autopause_on;
+    stop <= estado_stop or autopause_on; -- controle do pause
     
     
-    Base_Clock : Timing_Reference
+    Base_Clock : Timing_Reference -- clock 1hz
         PORT MAP (
             CLK => clk,
             CLK_OUTHZ => clk_outHz1k
         );
 
-    Clock_60kHz : Timing_Reference60k
+    Clock_60kHz : Timing_Reference60k -- clock 60hz
         PORT MAP (
             CLK => clk,
             CLK_OUTHZ => clk_outHz60k
         );
     
-    U_CONTADOR9_1 : CONTADOR9
+    U_CONTADOR9_1 : CONTADOR9 -- contadores
         PORT MAP (
-            CLK       => (clk_test) and (not(stop)),
-            CLEAR     => reset,
+            CLK       => (clk_outHz) and (not(stop)), -- controle do clock e do pause é feito aqui 
+            CLEAR     => NOT(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c91,
             Q_OUT     => s_q_c91
@@ -152,7 +142,7 @@ BEGIN
     U_CONTADOR9_2 : CONTADOR9
         PORT MAP (
             CLK       => not(s_carry_c91),
-            CLEAR     => reset,
+            CLEAR     => not(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c92,
             Q_OUT     => s_q_c92
@@ -161,7 +151,7 @@ BEGIN
     U_CONTADOR9_3 : CONTADOR9
         PORT MAP (
             CLK       => not(s_carry_c92),
-            CLEAR     => reset,
+            CLEAR     => not(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c93,
             Q_OUT     => s_q_c93
@@ -170,7 +160,7 @@ BEGIN
     U_CONTADOR9_4 : CONTADOR9
         PORT MAP (
             CLK       => not(s_carry_c93),
-            CLEAR     => reset,
+            CLEAR     => not(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c94,
             Q_OUT     => s_q_c94
@@ -178,7 +168,7 @@ BEGIN
     U_CONTADOR5_1 : CONTADOR5
         PORT MAP (
             CLK       => not(s_carry_c94),
-            CLEAR     => reset,
+            CLEAR     => not(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c51,
             Q_OUT     => s_q_c51
@@ -186,14 +176,14 @@ BEGIN
     U_CONTADOR9_5 : CONTADOR9
         PORT MAP (
             CLK       => not(s_carry_c51),
-            CLEAR     => reset,
+            CLEAR     => not(reset),
             PRESET    => '0',
             CARRY_OUT => s_carry_c95,
             Q_OUT     => s_q_c95
         );
 
         
-    -- Instância do componente LED7SEG_VHDL para cada contador
+    -- leds
     U_LED7SEG_1 : LED7SEG_VHDL
         PORT MAP (
             Q => s_q_c91,
@@ -225,14 +215,6 @@ BEGIN
             S => hexout5
         );
 
-    
-    -- Conectando a saída Q do CONTADOR9 à porta de saída 'saida1'
-    saida1 <= s_q_c91;
-    saida2 <= s_q_c92;
-    saida3 <= s_q_c93;
-    saida4 <= s_q_c94;
-    saida5 <= s_q_c51;
-    saida6 <= s_q_c95;
     -- Saidas para os displays de 7 segmentos
     saidahex0 <= hexout0;
     saidahex1 <= hexout1;

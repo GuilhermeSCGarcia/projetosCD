@@ -37,14 +37,14 @@
 
 
 set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M08DAF484I7G
+set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY CronometroVHDL
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:10:32  MAY 16, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
@@ -63,4 +63,51 @@ set_global_assignment -name VHDL_FILE Timing_Reference.vhd
 set_global_assignment -name VHDL_FILE LED7SEG.vhd
 set_global_assignment -name VHDL_FILE CronometroVHDL.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_location_assignment PIN_B8 -to button_stop
+set_location_assignment PIN_P11 -to clk
+set_location_assignment PIN_A8 -to ledclk
+set_location_assignment PIN_A7 -to reset
+set_location_assignment PIN_C17 -to saidahex0[6]
+set_location_assignment PIN_C14 -to saidahex0[0]
+set_location_assignment PIN_E15 -to saidahex0[1]
+set_location_assignment PIN_D17 -to saidahex0[5]
+set_location_assignment PIN_E16 -to saidahex0[4]
+set_location_assignment PIN_C16 -to saidahex0[3]
+set_location_assignment PIN_C15 -to saidahex0[2]
+set_location_assignment PIN_C18 -to saidahex1[0]
+set_location_assignment PIN_D18 -to saidahex1[1]
+set_location_assignment PIN_E18 -to saidahex1[2]
+set_location_assignment PIN_B16 -to saidahex1[3]
+set_location_assignment PIN_A17 -to saidahex1[4]
+set_location_assignment PIN_A18 -to saidahex1[5]
+set_location_assignment PIN_B17 -to saidahex1[6]
+set_location_assignment PIN_B20 -to saidahex2[0]
+set_location_assignment PIN_A20 -to saidahex2[1]
+set_location_assignment PIN_B19 -to saidahex2[2]
+set_location_assignment PIN_A21 -to saidahex2[3]
+set_location_assignment PIN_B21 -to saidahex2[4]
+set_location_assignment PIN_C22 -to saidahex2[5]
+set_location_assignment PIN_B22 -to saidahex2[6]
+set_location_assignment PIN_F21 -to saidahex3[0]
+set_location_assignment PIN_E22 -to saidahex3[1]
+set_location_assignment PIN_E21 -to saidahex3[2]
+set_location_assignment PIN_C19 -to saidahex3[3]
+set_location_assignment PIN_C20 -to saidahex3[4]
+set_location_assignment PIN_D19 -to saidahex3[5]
+set_location_assignment PIN_E17 -to saidahex3[6]
+set_location_assignment PIN_F18 -to saidahex4[0]
+set_location_assignment PIN_E20 -to saidahex4[1]
+set_location_assignment PIN_E19 -to saidahex4[2]
+set_location_assignment PIN_J18 -to saidahex4[3]
+set_location_assignment PIN_H19 -to saidahex4[4]
+set_location_assignment PIN_F19 -to saidahex4[5]
+set_location_assignment PIN_F20 -to saidahex4[6]
+set_location_assignment PIN_J20 -to saidahex5[0]
+set_location_assignment PIN_K20 -to saidahex5[1]
+set_location_assignment PIN_L18 -to saidahex5[2]
+set_location_assignment PIN_N18 -to saidahex5[3]
+set_location_assignment PIN_M20 -to saidahex5[4]
+set_location_assignment PIN_N19 -to saidahex5[5]
+set_location_assignment PIN_N20 -to saidahex5[6]
+set_location_assignment PIN_C10 -to seletorclk
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

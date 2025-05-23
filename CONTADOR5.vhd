@@ -46,7 +46,7 @@ architecture Behavorial of CONTADOR5 is
                 K_OUT => s_K_vec
             );
             
-            
+            --LSB
             U_FFJK_0 : FFJK
                 port map(
                     J     => s_J_vec(0),
@@ -74,7 +74,8 @@ architecture Behavorial of CONTADOR5 is
                     PRE   => PRESET,
                     CLEAR => CLEAR,
                     Q     => s_Q(2)
-                ); 
+                );
+				--MSB 
             U_FFJK_3 : FFJK
                 port map(
                     J     => s_J_vec(3),
