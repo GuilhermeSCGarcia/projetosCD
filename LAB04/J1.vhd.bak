@@ -1,0 +1,19 @@
+using ieee;
+use ieee.std_logic_1164.all;
+
+entity J1 is
+	port(
+		X1 : in std_logic;
+		X2 : in std_logic;
+		X3 : in std_logic;
+		J1: out std_logic;
+	);
+end entity J1;
+
+
+architecture Behaviorial of J1 is
+begin
+	J1 <= (NOT (X2 AND X1)) OR (X3 AND X2 AND X1);
+
+end architecture Behaviorial;
+		

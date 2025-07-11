@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "S10",
+					"strict" : false
+				},
+				{
+					"name" : "S11",
+					"strict" : false
+				},
+				{
+					"name" : "S12",
+					"strict" : false
+				},
+				{
+					"name" : "S13",
+					"strict" : false
+				},
+				{
+					"name" : "S14",
+					"strict" : false
+				},
+				{
+					"name" : "S15",
+					"strict" : false
+				},
+				{
+					"name" : "S16",
+					"strict" : false
+				},
+				{
+					"name" : "S0",
+					"strict" : false
+				},
+				{
+					"name" : "S1",
+					"strict" : false
+				},
+				{
+					"name" : "S2",
+					"strict" : false
+				},
+				{
+					"name" : "S3",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "PB0",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

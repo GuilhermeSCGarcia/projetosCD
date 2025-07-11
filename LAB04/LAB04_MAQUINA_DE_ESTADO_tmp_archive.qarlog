@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO_tmp_archive.qarlog
+
+Archive:	C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO_tmp_archive.qar
+Date:		Mon Jun 02 21:44:49 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/LAB03/SOMA1BIT.bdf
+C:/LAB03/SOMA4BITS.bdf
+C:/LAB2/LAB02__restored/MULPLEX4.bdf
+C:/LAB2/LAB02__restored/MULTIPLEX.bdf
+C:/ProjetosCD/LAB03/REG_PARALELO.bdf
+C:/ProjetosCD/LAB03/output_files/LED7SEG.vhd
+C:/ProjetosCD/LAB04/CONTADOR.vhd
+C:/ProjetosCD/LAB04/J1.vhd
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.bdf
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qpf
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qsf
+C:/ProjetosCD/LAB04/Waveform.vwf
+C:/Users/guiga/OneDrive/Área de Trabalho/Timing_Reference.vhd
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Jun 02 21:44:51 2025
+Source archive file:	C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO_tmp_archive.qar
+Archive was extracted into	C:/ProjetosCD/LAB04_copy/
+		 - successfully.

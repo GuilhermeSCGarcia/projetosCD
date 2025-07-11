@@ -1,0 +1,51 @@
+Quartus Prime Archive log --	C:/PROJETOS2/LAB07/lab07.qarlog
+
+Archive:	C:/PROJETOS2/LAB07/lab07.qar
+Date:		Thu Jul 10 22:38:04 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/PROJETOS2/LAB07/CONTADOR.vhd
+C:/PROJETOS2/LAB07/CONTADOR1FF.vhd
+C:/PROJETOS2/LAB07/CONTADOR9.vhd
+C:/PROJETOS2/LAB07/CONTADORF.vhd
+C:/PROJETOS2/LAB07/CONTROLADOR.vhd
+C:/PROJETOS2/LAB07/DETECTOR.vhd
+C:/PROJETOS2/LAB07/DIVISOR_VETOR02.vhd
+C:/PROJETOS2/LAB07/FFD.vhd
+C:/PROJETOS2/LAB07/FFJK.vhd
+C:/PROJETOS2/LAB07/LED7SEG.vhd
+C:/PROJETOS2/LAB07/LOGICACONTADORF.vhd
+C:/PROJETOS2/LAB07/LOGICADETECTOR.vhd
+C:/PROJETOS2/LAB07/MSB.vhd
+C:/PROJETOS2/LAB07/MULTIPLEX18.vhd
+C:/PROJETOS2/LAB07/MULTIPLEX81.vhd
+C:/PROJETOS2/LAB07/PISO8BITS.vhd
+C:/PROJETOS2/LAB07/Timing_Reference.vhd
+C:/PROJETOS2/LAB07/Waveform.vwf
+C:/PROJETOS2/LAB07/Waveform1.vwf
+C:/PROJETOS2/LAB07/Waveform2.vwf
+C:/PROJETOS2/LAB07/Waveform3.vwf
+C:/PROJETOS2/LAB07/Waveform4.vwf
+C:/PROJETOS2/LAB07/Waveform5.vwf
+C:/PROJETOS2/LAB07/Waveform6.vwf
+C:/PROJETOS2/LAB07/divisor.vhd
+C:/PROJETOS2/LAB07/lab07.qpf
+C:/PROJETOS2/LAB07/lab07.qsf
+C:/PROJETOS2/LAB07/lab07toptemp.bdf
+C:/PROJETOS2/LAB07/multiplex24.vhd
+C:/PROJETOS2/LAB07/rom.bsf
+C:/PROJETOS2/LAB07/rom.cmp
+C:/PROJETOS2/LAB07/rom.qip
+C:/PROJETOS2/LAB07/rom.vhd
+C:/PROJETOS2/LAB07/rom2.bsf
+C:/PROJETOS2/LAB07/rom2.cmp
+C:/PROJETOS2/LAB07/rom2.qip
+C:/PROJETOS2/LAB07/rom2.vhd
+C:/PROJETOS2/LAB07/rom_256_8.hex
+C:/PROJETOS2/LAB07/rom_decrescente.hex
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 40 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

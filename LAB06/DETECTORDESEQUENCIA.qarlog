@@ -1,0 +1,21 @@
+Quartus Prime Archive log --	C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA.qarlog
+
+Archive:	C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA.qar
+Date:		Thu Jul 10 22:41:53 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA.qpf
+C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA.qsf
+C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA.vhd
+C:/ProjetosCD/LAB06/DETECTORDESEQUENCIA_TOP.vhd
+C:/ProjetosCD/LAB06/FFD.vhd
+C:/ProjetosCD/LAB06/LED7SEG.vhd
+C:/ProjetosCD/LAB06/Waveform.vwf
+C:/ProjetosCD/LAB06/Waveform1.vwf
+C:/ProjetosCD/LAB06/ffjk.vhd
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 10 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

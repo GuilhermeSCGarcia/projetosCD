@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/ProjetosCD/LAB03/LAB03.qarlog
+
+Archive:	C:/ProjetosCD/LAB03/LAB03.qar
+Date:		Thu Jul 10 22:40:16 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/ProjetosCD/LAB03/INVERSOR.bdf
+C:/ProjetosCD/LAB03/LAB03.qpf
+C:/ProjetosCD/LAB03/MULPLEX4.bdf
+C:/ProjetosCD/LAB03/MULTIPLEX.bdf
+C:/ProjetosCD/LAB03/PISO8BITS.bdf
+C:/ProjetosCD/LAB03/REG_PARALELO.bdf
+C:/ProjetosCD/LAB03/SIPO8BITS.bdf
+C:/ProjetosCD/LAB03/SOMA1BIT.bdf
+C:/ProjetosCD/LAB03/SOMA4BITS.bdf
+C:/ProjetosCD/LAB03/SOMADOR4BITS7SEG.bdf
+C:/ProjetosCD/LAB03/SOMADOR4BITS7SEG.qsf
+C:/ProjetosCD/LAB03/Waveform.vwf
+C:/ProjetosCD/LAB03/Waveform1.vwf
+C:/ProjetosCD/LAB03/assignment_defaults.qdf
+C:/ProjetosCD/LAB03/output_files/LED7SEG.vhd
+C:/ProjetosCD/LAB03/output_files/Waveform.vwf
+C:/ProjetosCD/LAB03/output_files/teste.vwf
+	======= Total: 17 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

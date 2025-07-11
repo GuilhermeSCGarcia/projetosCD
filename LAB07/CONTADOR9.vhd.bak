@@ -1,0 +1,106 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity CONTADOR9 is
+    port (
+        CLK    : in  std_logic;                             -- Entrada de Clock
+        CLEAR  : in  std_logic;                             -- Entrada de Clear assíncrono (ativo alto)
+        PRESET : in  std_logic;                             -- Entrada de Preset assíncrono (ativo alto)
+        ENABLE: IN std_logic;
+        CARRY_OUT : OUT std_logic;
+        Q_OUT  : out std_logic_vector(3 downto 0)         -- Saída do contador (Q3 Q2 Q1 Q0)
+    );
+end entity CONTADOR9;
+
+architecture Behavioral of CONTADOR9 is
+
+  
+    component LOGICA_JK_CONT09 is
+        port(
+            ENABLE : in std_logic;
+            X_IN  : in  std_logic_vector(3 downto 0);
+            J_OUT : out std_logic_vector(3 downto 0);
+            K_OUT : out std_logic_vector(3 downto 0)
+        );
+    end component LOGICA_JK_CONT09;
+
+    -- declaração do jk flip-flop
+    component FFJK is
+        port (
+            J     : in  std_logic;
+            K     : in  std_logic;
+            CLK   : in  std_logic;
+            PRE   : in  std_logic; -- Preset individual do FF (ativo alto, seta Q para '1')
+            CLEAR : in  std_logic; -- Clear individual do FF (ativo alto, reseta Q para '0')
+            Q     : out std_logic
+        );
+    end component FFJK;
+
+    -- Sinais internos
+    signal s_Q      : std_logic_vector(3 downto 0) := "0000"; -- Estado atual dos flip-flops (saídas Q)
+    signal s_J_vec  : std_logic_vector(3 downto 0);         -- Sinais J para os flip-flops
+    signal s_K_vec  : std_logic_vector(3 downto 0);         -- Sinais K para os flip-flops
+
+
+begin
+
+    -- Instanciação da lógica combinacional LOGICA_JK_CONT09
+    U_LOGICA_PROX_ESTADO_09 : LOGICA_JK_CONT09
+        port map (
+            ENABLE => ENABLE,
+            X_IN  => s_Q,
+            J_OUT => s_J_vec,
+            K_OUT => s_K_vec
+        );
+
+    
+
+    -- Flip-Flop 0 (LSB)
+    U_FF_JK_0 : FFJK
+        port map (
+            J     => s_J_vec(0),
+            K     => s_K_vec(0),
+            CLK   => CLK,
+            PRE   => PRESET, 
+            CLEAR => CLEAR,  
+            Q     => s_Q(0)
+        );
+
+    -- Flip-Flop 1
+    U_FF_JK_1 : FFJK
+        port map (
+            J     => s_J_vec(1),
+            K     => s_K_vec(1),
+            CLK   => CLK,
+            PRE   => PRESET, 
+            CLEAR => CLEAR,  
+            Q     => s_Q(1)
+        );
+
+    -- Flip-Flop 2
+    U_FF_JK_2 : FFJK
+        port map (
+            J     => s_J_vec(2),
+            K     => s_K_vec(2),
+            CLK   => CLK,
+            PRE   => PRESET, 
+            CLEAR => CLEAR,  
+            Q     => s_Q(2)
+        );
+
+    -- Flip-Flop 3 (MSB)
+    U_FF_JK_3 : FFJK
+        port map (
+            J     => s_J_vec(3),
+            K     => s_K_vec(3),
+            CLK   => CLK,
+            PRE   => PRESET, 
+            CLEAR => CLEAR,  
+            Q     => s_Q(3)
+        );
+
+    -- Atribui o estado interno dos flip-flops à saída do contador
+    Q_OUT <= s_Q;
+    CARRY_OUT <= s_Q(3);
+
+end architecture Behavioral;

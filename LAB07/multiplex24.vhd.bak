@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity multiplex24 is
+    port(
+        A : in std_logic;
+        B : in std_logic;
+        ENABLE: in std_logic;
+        S: out std_logic_vector(3 downto 0)
+    );
+end entity multiplex24;
+
+architecture behavorial of multiplex24 is
+
+signal sel : std_logic_vector(1 downto 0);
+
+begin
+    sel <= B & A; -- Combina B e A para formar o sinal de seleção (B é o MSB do seletor)
+
+    with sel and ENABLE select
+        S <= "0001" when "00", -- A='0', B='0'
+             "0010" when "01", -- A='1', B='0'
+             "0100" when "10", -- A='0', B='1'
+             "1000" when "11", -- A='1', B='1'
+             "0000" when others; -- Caso padrão, embora todas as combinações de sel sejam cobertas
+
+end behavorial;

@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Jun 21 20:41:50 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : lab07
+Top-level Entity Name : lab07toptemp
+Family : MAX 10
+Total logic elements : 84
+    Total combinational functions : 83
+    Dedicated logic registers : 26
+Total registers : 26
+Total pins : 57
+Total virtual pins : 0
+Total memory bits : 4,096
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

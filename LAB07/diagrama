@@ -1,0 +1,52 @@
+
+stateDiagram-v2
+    direction LR
+
+    %% Definição dos estados baseados em 'qout'
+    S0000: "qout = 0000"
+    S_INTERMEDIARIOS: "qout = 0001 .. 1000"
+    S1001: "qout = 1001"
+
+    [*] --> S0000  -- Inicialização
+
+    %% Transições entre os estados
+    S0000 --> S_INTERMEDIARIOS : T
+    S_INTERMEDIARIOS --> S_INTERMEDIARIOS : T (qout avança dentro do intervalo)
+    S_INTERMEDIARIOS --> S1001 : T (quando qout = 1000)
+    S1001 --> S0000 : T (contador reinicia)
+
+    %% Nota sobre a condição de transição
+    note "Condição de Transição (T):\nA transição ocorre no clock (CLK) se o contador\nCONTADOR9 estiver habilitado, ou seja:\nENABLE = (NOT sistema_pausado AND NOT CLK_STOP)" as CondicaoTransicao
+
+    %% Notas descrevendo as saídas para cada estado principal
+    note left of S0000
+        Saídas em qout = "0000":
+        PISOCONTROL = '1'
+        DETECTORCONTROL = '0'
+        MEMORYCONTROL = '0'
+        RESETCONTROL = '0'
+    end note
+
+    note right of S_INTERMEDIARIOS
+        Saídas em qout = "0001".."1000":
+        PISOCONTROL = '0'
+        MEMORYCONTROL = '0'
+        RESETCONTROL = '0'
+        DETECTORCONTROL = (NOT sistema_pausado)
+    end note
+
+    note right of S1001
+        Saídas em qout = "1001":
+        PISOCONTROL = '0'
+        DETECTORCONTROL = '0'
+        IF (NOT sistema_pausado) THEN
+          MEMORYCONTROL = '1'
+          RESETCONTROL = '1'
+        ELSE
+          MEMORYCONTROL = '0'
+          RESETCONTROL = '0'
+        ENDIF
+    end note
+
+    %% Nota geral sobre o controle de pausa
+    note "O sinal 'sistema_pausado' é fundamental:\n- É controlado pelo botão PAUSE (toggle) e pela entrada CLK_STOP (pausa automática).\n- Afeta a habilitação do contador (transições T) e as saídas\n  DETECTORCONTROL, MEMORYCONTROL, e RESETCONTROL." as InfoPausa

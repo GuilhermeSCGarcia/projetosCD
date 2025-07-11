@@ -1,0 +1,77 @@
+Restore Archived Project report for SOMADOR4BITS7SEG
+Sun Apr 27 12:14:22 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Sun Apr 27 12:14:22 2025 ;
+; Revision Name                   ; SOMADOR4BITS7SEG                      ;
+; Top-level Entity Name           ; SOMADOR4BITS7SEG                      ;
+; Family                          ; MAX 10                                ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/circuitos_digitais/SOMADOR4BITS7SEG_tmp_archive.qar' into the 'C:/CD/LAB02' directory
+Info: Generated report 'SOMADOR4BITS7SEG.restore.rpt'
+
+
++--------------------------+
+; Files Restored           ;
++--------------------------+
+; File Name                ;
++--------------------------+
+; qar_info.json            ;
+; INVERSOR.bdf             ;
+; SOMA1BIT.bdf             ;
+; SOMA4BITS.bdf            ;
+; SOMADOR4BITS7SEG.bdf     ;
+; SOMADOR4BITS7SEG.qpf     ;
+; SOMADOR4BITS7SEG.qsf     ;
+; Waveform.vwf             ;
+; output_files/LED7SEG.vhd ;
+; assignment_defaults.qdf  ;
++--------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

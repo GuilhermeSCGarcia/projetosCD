@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity DIVISOR_VETOR02 is
+    Port (
+        X     : in  STD_LOGIC_VECTOR(2 downto 0);
+        S1   : out STD_LOGIC_VECTOR(3 downto 0) 
+    );
+end DIVISOR_VETOR02;
+
+architecture Behavioral of DIVISOR_VETOR02 is
+begin 
+    S1 <= "0" & X;
+end Behavioral;

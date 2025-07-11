@@ -1,0 +1,24 @@
+ETAPA 01
+Considere os módulos Timing_ref, PISO e Detector de sequência criados em laboratórios anteriores. 
+Crie um contador para ser o GERADOR DE ENDEREÇOS SEQUENCIAS para a(s) memória(s)
+Insira em seu projeto DUAS memórias ROM de 256 endereços com registros de 8 bits por endereço (mem256x8). Ou seja, um banco de memória com endereços de 000h a 1FFh composto de duas memorias (000-0FF + 100-1FF).
+
+
+Utilizando inicialmente  arquivos de dados do tipo .hex (e.g., ROM_256_8.HEX fornecido), deixe o contador de 000 a 1FF ACIONADO POR UM CLOCK QUE PERMITA A VISUALIZAÇÃO ADEQUADA DO FUNCIONAMENTO DE TODO O CIRCUITO INCLUINDO A TRANSIÇÃO DE ESTADOS DO MÓDULO DETECTOR DE SEQUENCIA. Observe que o clock do detector de sequencia deve ser projetado de forma que todos os eventos de teste (7 bits da sequencia procurada) seja analisado para cada evento de clock do contador de endereçamento.
+
+O arquivo ROM_256_8.HEX fornecido tem 256 bytes. Para uma das memórias mem256x8, o estudante pode utilizar este arquivo. Para a outra memória mem256x8, crie um arquivo .HEX em que o conteúdo da memória seja uma sequencia decrescente de valores. Ou seja, endereço/dado respeite a sequencia 00/FF, 01/FE, 02/FD, ....(i.e., ENDEREÇO 02 > DADO FD).
+
+Para utilizar um único barramento de 8bits compartilhado, é necessário o uso de algum dispositivo que permita que somente UMA DAS MEMORIAS comande o barramento de dados em um dado instante (e.g., buffer tri-state pode ser obtido em primitives>buffer>tri)
+
+É OBRIGATÓRIO
+DOIS DISPLAYS PARA APRESENTAR O ENDEREÇO CORRENTE. Como os endereços vão de 000 a 1FF, pode-se utilizar um LED para apresentar a informação ZERO E UM di dígito mais significativo. 
+DOIS DISPLAYS PARA APRESENTAR O DADO NA MEMÓRIA CORRESPONDENTE AO ENDEREÇO APRESENTADO NOS DISPLAY ANTERIORES
+UM DISPLAY PARA APRESENTAR A VARIAÇÃO DE ESTADOS (ZERO A SETE) DO DETECTOR DE SEQUENCIA.
+
+
+IMPORTANTE:  o ARQUIVO .HEX fornecido para a memória tem TODAS as combinações possíveis para um número de 8 bits. Isto significa que o seu circuito deverá encontrar uma sequencia de 7 bits PELO MENOS 4 VEZES ao se fazer todo o screening dos dados de todos os endereços da memória. Por exemplo se a sua sequencia é composta pelos 7 bits representados aqui pelas letras "mnopqrs", o seu circuito deve PAUSAR quando estiver analisando os dados  "0mnopqrs", "1mnopqrs", "mnopqrs0" e "mnopqrs1".
+Desta forma, quando uma destaas sequencias for encontrada um LED deve ser acionado e todo o circuito deve PAUSAR  no estado em que se encontra através da inibição do clock para quaisquer elementos do circuito. Ao ser pressionado um push buttom da placa de sua escolha, o circuito deve ser capaz de continuar a análise a partir do endereço de memória que havia parado.
+
+
+// [MermaidChart: f907756f-bf38-42a6-8284-01273d3128b1]
+é necessário, APÓS APRESENTAÇÃO DO FUNCIONAMENTO DO CIRCUITO PARA O PROFESSOR, fazer o UPLOAD de um relatório de projeto (30% da nota), do diretório de projeto compactado  e de foto do visto do professor. Como neste projeto a novidade é a INTEGRAÇÃO de vários tipos de circuitos digitais, esta deve ser a ênfase do relatório.

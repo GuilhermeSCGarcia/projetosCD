@@ -1,0 +1,20 @@
+Quartus Prime Archive log --	C:/PROJETOS2/ProjetoFinal/projetofinal.qarlog
+
+Archive:	C:/PROJETOS2/ProjetoFinal/projetofinal.qar
+Date:		Wed Jul 02 10:15:30 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/PROJETOS2/ProjetoFinal/Conversor_para_display.vhd
+C:/PROJETOS2/ProjetoFinal/LED7SEG.vhd
+C:/PROJETOS2/ProjetoFinal/Timing_Reference.vhd
+C:/PROJETOS2/ProjetoFinal/Waveform.vwf
+C:/PROJETOS2/ProjetoFinal/arquivotopo.bdf
+C:/PROJETOS2/ProjetoFinal/projetofinal.qpf
+C:/PROJETOS2/ProjetoFinal/projetofinal.qsf
+C:/PROJETOS2/ProjetoFinal/volei.vhd
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 9 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

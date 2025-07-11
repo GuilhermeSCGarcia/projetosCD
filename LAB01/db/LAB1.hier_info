@@ -1,0 +1,11 @@
+|LAB1
+Qx <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+BBB => inst5.IN0
+BBB => inst1.CLK
+AAA => inst4.IN1
+Qy <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Qz <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Sa <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+a_c <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+

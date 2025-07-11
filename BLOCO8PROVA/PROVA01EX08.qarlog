@@ -1,0 +1,21 @@
+Quartus Prime Archive log --	C:/ProjetosCD/BLOCO8PROVA/PROVA01EX08.qarlog
+
+Archive:	C:/ProjetosCD/BLOCO8PROVA/PROVA01EX08.qar
+Date:		Wed Jun 04 16:02:52 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/ProjetosCD/BLOCO8PROVA/CONTADOR03.bdf
+C:/ProjetosCD/BLOCO8PROVA/PROVA01EX08.bdf
+C:/ProjetosCD/BLOCO8PROVA/PROVA01EX08.qpf
+C:/ProjetosCD/BLOCO8PROVA/PROVA01EX08.qsf
+C:/ProjetosCD/BLOCO8PROVA/Waveform1.vwf
+C:/ProjetosCD/BLOCO8PROVA/assignment_defaults.qdf
+C:/ProjetosCD/BLOCO8PROVA/output_files/BLOCO8.bdf
+C:/ProjetosCD/BLOCO8PROVA/output_files/BLOCO8PURODIAGRAMA.bdf
+C:/ProjetosCD/BLOCO8PROVA/output_files/BLOCO8VHDL.vhd
+C:/ProjetosCD/BLOCO8PROVA/output_files/MUX4BITS.bdf
+	======= Total: 10 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity MAQESTADO is
+    port(
+        X0  : in  std_logic; X1  : in  std_logic; X2  : in  std_logic; X3  : in  std_logic;
+        XN0 : in  std_logic; XN1 : in  std_logic; XN2 : in  std_logic; XN3 : in  std_logic;
+        J0  : out std_logic; K0  : out std_logic;
+        J1  : out std_logic; K1  : out std_logic;
+        J2  : out std_logic; K2  : out std_logic;
+        J3  : out std_logic; K3  : out std_logic
+    );
+end entity MAQESTADO;
+
+architecture Behavioral of MAQESTADO is
+begin
+    J0 <= '1';
+    K0 <= '1';
+	 
+    J1 <= X0 and not(X3);
+    K1 <= x0 and not(x3);
+	 
+    J2 <= X0 and X1;
+    K2 <= X0 and X1;
+	 
+    J3 <= X0 and X1 and X2;
+    K3 <= X0;
+
+end architecture Behavioral;

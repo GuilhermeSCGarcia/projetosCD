@@ -1,0 +1,1150 @@
+|lab07toptemp
+CLKMEMORIA <= CONTROLADOR:inst.MEMORYCONTROL
+CLK => CONTROLADOR:inst.CLK
+CLK => PISO8BITS:piso.clk
+CLK => CONTADOR1FF:inst2.clk
+CLK => inst4.IN0
+Pause => CONTROLADOR:inst.PAUSE
+msbcontador <= CONTADOR1FF:inst2.c_out
+pause_state <= CONTROLADOR:inst.pause_stateS
+PISOCONTROL <= CONTROLADOR:inst.PISOCONTROL
+DC <= CONTROLADOR:inst.DETECTORCONTROL
+FOUND <= DETECTOR:inst7.clkstop
+ESTADO_OUT[0] <= CONTROLADOR:inst.ESTADO[0]
+ESTADO_OUT[1] <= CONTROLADOR:inst.ESTADO[1]
+ESTADO_OUT[2] <= CONTROLADOR:inst.ESTADO[2]
+ESTADO_OUT[3] <= CONTROLADOR:inst.ESTADO[3]
+HEX0[0] <= LED7SEG_VHDL:LED1.S[0]
+HEX0[1] <= LED7SEG_VHDL:LED1.S[1]
+HEX0[2] <= LED7SEG_VHDL:LED1.S[2]
+HEX0[3] <= LED7SEG_VHDL:LED1.S[3]
+HEX0[4] <= LED7SEG_VHDL:LED1.S[4]
+HEX0[5] <= LED7SEG_VHDL:LED1.S[5]
+HEX0[6] <= LED7SEG_VHDL:LED1.S[6]
+HEX1[0] <= LED7SEG_VHDL:2.S[0]
+HEX1[1] <= LED7SEG_VHDL:2.S[1]
+HEX1[2] <= LED7SEG_VHDL:2.S[2]
+HEX1[3] <= LED7SEG_VHDL:2.S[3]
+HEX1[4] <= LED7SEG_VHDL:2.S[4]
+HEX1[5] <= LED7SEG_VHDL:2.S[5]
+HEX1[6] <= LED7SEG_VHDL:2.S[6]
+HEX2[0] <= LED7SEG_VHDL:LED6.S[0]
+HEX2[1] <= LED7SEG_VHDL:LED6.S[1]
+HEX2[2] <= LED7SEG_VHDL:LED6.S[2]
+HEX2[3] <= LED7SEG_VHDL:LED6.S[3]
+HEX2[4] <= LED7SEG_VHDL:LED6.S[4]
+HEX2[5] <= LED7SEG_VHDL:LED6.S[5]
+HEX2[6] <= LED7SEG_VHDL:LED6.S[6]
+HEX3[0] <= LED7SEG_VHDL:LED7.S[0]
+HEX3[1] <= LED7SEG_VHDL:LED7.S[1]
+HEX3[2] <= LED7SEG_VHDL:LED7.S[2]
+HEX3[3] <= LED7SEG_VHDL:LED7.S[3]
+HEX3[4] <= LED7SEG_VHDL:LED7.S[4]
+HEX3[5] <= LED7SEG_VHDL:LED7.S[5]
+HEX3[6] <= LED7SEG_VHDL:LED7.S[6]
+HEX4[0] <= LED7SEG_VHDL:4.S[0]
+HEX4[1] <= LED7SEG_VHDL:4.S[1]
+HEX4[2] <= LED7SEG_VHDL:4.S[2]
+HEX4[3] <= LED7SEG_VHDL:4.S[3]
+HEX4[4] <= LED7SEG_VHDL:4.S[4]
+HEX4[5] <= LED7SEG_VHDL:4.S[5]
+HEX4[6] <= LED7SEG_VHDL:4.S[6]
+HEX5[0] <= LED7SEG_VHDL:LED5.S[0]
+HEX5[1] <= LED7SEG_VHDL:LED5.S[1]
+HEX5[2] <= LED7SEG_VHDL:LED5.S[2]
+HEX5[3] <= LED7SEG_VHDL:LED5.S[3]
+HEX5[4] <= LED7SEG_VHDL:LED5.S[4]
+HEX5[5] <= LED7SEG_VHDL:LED5.S[5]
+HEX5[6] <= LED7SEG_VHDL:LED5.S[6]
+S_state[0] <= DETECTOR:inst7.S[0]
+S_state[1] <= DETECTOR:inst7.S[1]
+S_state[2] <= DETECTOR:inst7.S[2]
+
+
+|lab07toptemp|CONTROLADOR:inst
+CLK => CONTADOR9:inst_CONTADOR9.CLK
+CLK => last_pause.CLK
+CLK => sistema_pausado.CLK
+CLK_STOP => sistema_pausado.OUTPUTSELECT
+PAUSE => process_0.IN1
+PAUSE => last_pause.DATAIN
+DETECTOR_STATE[0] => ~NO_FANOUT~
+DETECTOR_STATE[1] => ~NO_FANOUT~
+DETECTOR_STATE[2] => ~NO_FANOUT~
+MEMORYCONTROL <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+PISOCONTROL <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+RESETCONTROL <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DETECTORCONTROL <= DETECTORCONTROL.DB_MAX_OUTPUT_PORT_TYPE
+ESTADO[0] <= CONTADOR9:inst_CONTADOR9.Q_OUT[0]
+ESTADO[1] <= CONTADOR9:inst_CONTADOR9.Q_OUT[1]
+ESTADO[2] <= CONTADOR9:inst_CONTADOR9.Q_OUT[2]
+ESTADO[3] <= CONTADOR9:inst_CONTADOR9.Q_OUT[3]
+pause_stateS <= sistema_pausado.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9
+CLK => FFJK:U_FF_JK_0.CLK
+CLK => FFJK:U_FF_JK_1.CLK
+CLK => FFJK:U_FF_JK_2.CLK
+CLK => FFJK:U_FF_JK_3.CLK
+CLEAR => FFJK:U_FF_JK_0.CLEAR
+CLEAR => FFJK:U_FF_JK_1.CLEAR
+CLEAR => FFJK:U_FF_JK_2.CLEAR
+CLEAR => FFJK:U_FF_JK_3.CLEAR
+PRESET => FFJK:U_FF_JK_0.PRESET
+PRESET => FFJK:U_FF_JK_1.PRESET
+PRESET => FFJK:U_FF_JK_2.PRESET
+PRESET => FFJK:U_FF_JK_3.PRESET
+ENABLE => LOGICA_JK_CONT09:U_LOGICA_PROX_ESTADO_09.ENABLE
+CARRY_OUT <= FFJK:U_FF_JK_3.Q
+Q_OUT[0] <= FFJK:U_FF_JK_0.Q
+Q_OUT[1] <= FFJK:U_FF_JK_1.Q
+Q_OUT[2] <= FFJK:U_FF_JK_2.Q
+Q_OUT[3] <= FFJK:U_FF_JK_3.Q
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|LOGICA_JK_CONT09:U_LOGICA_PROX_ESTADO_09
+ENABLE => J_OUT.OUTPUTSELECT
+ENABLE => K_OUT.OUTPUTSELECT
+ENABLE => J_OUT.OUTPUTSELECT
+ENABLE => K_OUT.OUTPUTSELECT
+ENABLE => J_OUT.OUTPUTSELECT
+ENABLE => K_OUT.OUTPUTSELECT
+ENABLE => J_OUT[0].DATAIN
+ENABLE => K_OUT[0].DATAIN
+X_IN[0] => J_OUT.IN0
+X_IN[0] => J_OUT.IN0
+X_IN[0] => K_OUT.DATAB
+X_IN[1] => J_OUT.IN1
+X_IN[2] => J_OUT.IN1
+X_IN[3] => J_OUT.IN1
+J_OUT[0] <= ENABLE.DB_MAX_OUTPUT_PORT_TYPE
+J_OUT[1] <= J_OUT.DB_MAX_OUTPUT_PORT_TYPE
+J_OUT[2] <= J_OUT.DB_MAX_OUTPUT_PORT_TYPE
+J_OUT[3] <= J_OUT.DB_MAX_OUTPUT_PORT_TYPE
+K_OUT[0] <= ENABLE.DB_MAX_OUTPUT_PORT_TYPE
+K_OUT[1] <= K_OUT.DB_MAX_OUTPUT_PORT_TYPE
+K_OUT[2] <= K_OUT.DB_MAX_OUTPUT_PORT_TYPE
+K_OUT[3] <= K_OUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+PRESET => Q_reg.IN0
+CLEAR => Q_reg.ACLR
+CLEAR => Q_reg.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_1
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+PRESET => Q_reg.IN0
+CLEAR => Q_reg.ACLR
+CLEAR => Q_reg.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_2
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+PRESET => Q_reg.IN0
+CLEAR => Q_reg.ACLR
+CLEAR => Q_reg.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_3
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+PRESET => Q_reg.IN0
+CLEAR => Q_reg.ACLR
+CLEAR => Q_reg.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DETECTOR:inst7
+I => LOGICADETECTOR:LOGICADETECTOR_inst.I
+S[0] <= FFD:FFD_inst0.Q
+S[1] <= FFD:FFD_inst1.Q
+S[2] <= FFD:FFD_inst2.Q
+ENABLE => enable_input.OUTPUTSELECT
+ENABLE => enable_input.OUTPUTSELECT
+ENABLE => enable_input.OUTPUTSELECT
+clk => FFD:FFD_inst0.clk
+clk => FFD:FFD_inst1.clk
+clk => FFD:FFD_inst2.clk
+RESET => enable_input[2].OUTPUTSELECT
+RESET => enable_input[1].OUTPUTSELECT
+RESET => enable_input[0].OUTPUTSELECT
+clkstop <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DETECTOR:inst7|LOGICADETECTOR:LOGICADETECTOR_inst
+I => Q.IN0
+I => Q.IN0
+I => Q.IN0
+I => Q.IN0
+I => Q.IN0
+I => Q.IN0
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[0] => Q.IN1
+X[1] => Q.IN0
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN0
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN1
+X[1] => Q.IN0
+X[2] => Q.IN1
+X[2] => Q.IN1
+X[2] => Q.IN1
+X[2] => Q.IN1
+X[2] => Q.IN1
+X[2] => Q.IN1
+X[2] => Q.IN1
+Q[0] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DETECTOR:inst7|FFD:FFD_inst0
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DETECTOR:inst7|FFD:FFD_inst1
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DETECTOR:inst7|FFD:FFD_inst2
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|PISO8BITS:piso
+clk => data_s[0].CLK
+clk => data_s[1].CLK
+clk => data_s[2].CLK
+clk => data_s[3].CLK
+clk => data_s[4].CLK
+clk => data_s[5].CLK
+clk => data_s[6].CLK
+clk => data_s[7].CLK
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+mode => data_s.OUTPUTSELECT
+enable => data_s[0].ENA
+enable => data_s[1].ENA
+enable => data_s[2].ENA
+enable => data_s[3].ENA
+enable => data_s[4].ENA
+enable => data_s[5].ENA
+enable => data_s[6].ENA
+enable => data_s[7].ENA
+data_in[0] => data_s.DATAB
+data_in[1] => data_s.DATAB
+data_in[2] => data_s.DATAB
+data_in[3] => data_s.DATAB
+data_in[4] => data_s.DATAB
+data_in[5] => data_s.DATAB
+data_in[6] => data_s.DATAB
+data_in[7] => data_s.DATAB
+data_out <= data_s[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|MULTIPLEX8:inst19
+I0[0] => S.DATAB
+I0[1] => S.DATAB
+I0[2] => S.DATAB
+I0[3] => S.DATAB
+I0[4] => S.DATAB
+I0[5] => S.DATAB
+I0[6] => S.DATAB
+I0[7] => S.DATAB
+I1[0] => S.DATAA
+I1[1] => S.DATAA
+I1[2] => S.DATAA
+I1[3] => S.DATAA
+I1[4] => S.DATAA
+I1[5] => S.DATAA
+I1[6] => S.DATAA
+I1[7] => S.DATAA
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+C => S.OUTPUTSELECT
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2
+clk => CONTADORF:inst_contadorf_0.clk
+clk => CONTADORF:inst_contadorf_1.clk
+clk => latched_carry_value.CLK
+ENABLE => CONTADORF:inst_contadorf_0.ENABLE
+q_out[0] <= CONTADORF:inst_contadorf_0.q_out[0]
+q_out[1] <= CONTADORF:inst_contadorf_0.q_out[1]
+q_out[2] <= CONTADORF:inst_contadorf_0.q_out[2]
+q_out[3] <= CONTADORF:inst_contadorf_0.q_out[3]
+q_out[4] <= CONTADORF:inst_contadorf_1.q_out[0]
+q_out[5] <= CONTADORF:inst_contadorf_1.q_out[1]
+q_out[6] <= CONTADORF:inst_contadorf_1.q_out[2]
+q_out[7] <= CONTADORF:inst_contadorf_1.q_out[3]
+c_out <= latched_carry_value.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0
+clk => FFD:inst_FFD0.clk
+clk => FFD:inst_FFD1.clk
+clk => FFD:inst_FFD2.clk
+clk => FFD:inst_FFD3.clk
+ENABLE => LOGICACONTADORF:inst_LOGICACONTADORF.ENABLE
+q_out[0] <= FFD:inst_FFD0.Q
+q_out[1] <= FFD:inst_FFD1.Q
+q_out[2] <= FFD:inst_FFD2.Q
+q_out[3] <= FFD:inst_FFD3.Q
+c_out <= LOGICACONTADORF:inst_LOGICACONTADORF.carry_out
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0|LOGICACONTADORF:inst_LOGICACONTADORF
+current_state[0] => Add0.IN8
+current_state[0] => Equal0.IN7
+current_state[0] => next_state.DATAA
+current_state[1] => Add0.IN7
+current_state[1] => Equal0.IN6
+current_state[1] => next_state.DATAA
+current_state[2] => Add0.IN6
+current_state[2] => Equal0.IN5
+current_state[2] => next_state.DATAA
+current_state[3] => Add0.IN5
+current_state[3] => Equal0.IN4
+current_state[3] => next_state.DATAA
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => carry_out.OUTPUTSELECT
+next_state[0] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[1] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[2] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[3] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0|FFD:inst_FFD0
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0|FFD:inst_FFD1
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0|FFD:inst_FFD2
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_0|FFD:inst_FFD3
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1
+clk => FFD:inst_FFD0.clk
+clk => FFD:inst_FFD1.clk
+clk => FFD:inst_FFD2.clk
+clk => FFD:inst_FFD3.clk
+ENABLE => LOGICACONTADORF:inst_LOGICACONTADORF.ENABLE
+q_out[0] <= FFD:inst_FFD0.Q
+q_out[1] <= FFD:inst_FFD1.Q
+q_out[2] <= FFD:inst_FFD2.Q
+q_out[3] <= FFD:inst_FFD3.Q
+c_out <= LOGICACONTADORF:inst_LOGICACONTADORF.carry_out
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1|LOGICACONTADORF:inst_LOGICACONTADORF
+current_state[0] => Add0.IN8
+current_state[0] => Equal0.IN7
+current_state[0] => next_state.DATAA
+current_state[1] => Add0.IN7
+current_state[1] => Equal0.IN6
+current_state[1] => next_state.DATAA
+current_state[2] => Add0.IN6
+current_state[2] => Equal0.IN5
+current_state[2] => next_state.DATAA
+current_state[3] => Add0.IN5
+current_state[3] => Equal0.IN4
+current_state[3] => next_state.DATAA
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => next_state.OUTPUTSELECT
+ENABLE => carry_out.OUTPUTSELECT
+next_state[0] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[1] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[2] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+next_state[3] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1|FFD:inst_FFD0
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1|FFD:inst_FFD1
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1|FFD:inst_FFD2
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|CONTADOR1FF:inst2|CONTADORF:inst_contadorf_1|FFD:inst_FFD3
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|rom:rom
+aclr => altsyncram:altsyncram_component.aclr0
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+address[5] => altsyncram:altsyncram_component.address_a[5]
+address[6] => altsyncram:altsyncram_component.address_a[6]
+address[7] => altsyncram:altsyncram_component.address_a[7]
+clock => altsyncram:altsyncram_component.clock0
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
+
+
+|lab07toptemp|rom:rom|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_a[4] => ~NO_FANOUT~
+data_a[5] => ~NO_FANOUT~
+data_a[6] => ~NO_FANOUT~
+data_a[7] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_1sp3:auto_generated.address_a[0]
+address_a[1] => altsyncram_1sp3:auto_generated.address_a[1]
+address_a[2] => altsyncram_1sp3:auto_generated.address_a[2]
+address_a[3] => altsyncram_1sp3:auto_generated.address_a[3]
+address_a[4] => altsyncram_1sp3:auto_generated.address_a[4]
+address_a[5] => altsyncram_1sp3:auto_generated.address_a[5]
+address_a[6] => altsyncram_1sp3:auto_generated.address_a[6]
+address_a[7] => altsyncram_1sp3:auto_generated.address_a[7]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_1sp3:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => altsyncram_1sp3:auto_generated.aclr0
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_1sp3:auto_generated.q_a[0]
+q_a[1] <= altsyncram_1sp3:auto_generated.q_a[1]
+q_a[2] <= altsyncram_1sp3:auto_generated.q_a[2]
+q_a[3] <= altsyncram_1sp3:auto_generated.q_a[3]
+q_a[4] <= altsyncram_1sp3:auto_generated.q_a[4]
+q_a[5] <= altsyncram_1sp3:auto_generated.q_a[5]
+q_a[6] <= altsyncram_1sp3:auto_generated.q_a[6]
+q_a[7] <= altsyncram_1sp3:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|lab07toptemp|rom:rom|altsyncram:altsyncram_component|altsyncram_1sp3:auto_generated
+aclr0 => ram_block1a0.CLR0
+aclr0 => ram_block1a1.CLR0
+aclr0 => ram_block1a2.CLR0
+aclr0 => ram_block1a3.CLR0
+aclr0 => ram_block1a4.CLR0
+aclr0 => ram_block1a5.CLR0
+aclr0 => ram_block1a6.CLR0
+aclr0 => ram_block1a7.CLR0
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[6] => ram_block1a1.PORTAADDR6
+address_a[6] => ram_block1a2.PORTAADDR6
+address_a[6] => ram_block1a3.PORTAADDR6
+address_a[6] => ram_block1a4.PORTAADDR6
+address_a[6] => ram_block1a5.PORTAADDR6
+address_a[6] => ram_block1a6.PORTAADDR6
+address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+
+
+|lab07toptemp|rom2:inst9
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+address[5] => altsyncram:altsyncram_component.address_a[5]
+address[6] => altsyncram:altsyncram_component.address_a[6]
+address[7] => altsyncram:altsyncram_component.address_a[7]
+clock => altsyncram:altsyncram_component.clock0
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
+
+
+|lab07toptemp|rom2:inst9|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_a[4] => ~NO_FANOUT~
+data_a[5] => ~NO_FANOUT~
+data_a[6] => ~NO_FANOUT~
+data_a[7] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_p5s3:auto_generated.address_a[0]
+address_a[1] => altsyncram_p5s3:auto_generated.address_a[1]
+address_a[2] => altsyncram_p5s3:auto_generated.address_a[2]
+address_a[3] => altsyncram_p5s3:auto_generated.address_a[3]
+address_a[4] => altsyncram_p5s3:auto_generated.address_a[4]
+address_a[5] => altsyncram_p5s3:auto_generated.address_a[5]
+address_a[6] => altsyncram_p5s3:auto_generated.address_a[6]
+address_a[7] => altsyncram_p5s3:auto_generated.address_a[7]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_p5s3:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_p5s3:auto_generated.q_a[0]
+q_a[1] <= altsyncram_p5s3:auto_generated.q_a[1]
+q_a[2] <= altsyncram_p5s3:auto_generated.q_a[2]
+q_a[3] <= altsyncram_p5s3:auto_generated.q_a[3]
+q_a[4] <= altsyncram_p5s3:auto_generated.q_a[4]
+q_a[5] <= altsyncram_p5s3:auto_generated.q_a[5]
+q_a[6] <= altsyncram_p5s3:auto_generated.q_a[6]
+q_a[7] <= altsyncram_p5s3:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|lab07toptemp|rom2:inst9|altsyncram:altsyncram_component|altsyncram_p5s3:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[6] => ram_block1a1.PORTAADDR6
+address_a[6] => ram_block1a2.PORTAADDR6
+address_a[6] => ram_block1a3.PORTAADDR6
+address_a[6] => ram_block1a4.PORTAADDR6
+address_a[6] => ram_block1a5.PORTAADDR6
+address_a[6] => ram_block1a6.PORTAADDR6
+address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+
+
+|lab07toptemp|LED7SEG_VHDL:LED1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DIVISOR_VETOR:DIV1
+X[0] => S0[0].DATAIN
+X[1] => S0[1].DATAIN
+X[2] => S0[2].DATAIN
+X[3] => S0[3].DATAIN
+X[4] => S1[0].DATAIN
+X[5] => S1[1].DATAIN
+X[6] => S1[2].DATAIN
+X[7] => S1[3].DATAIN
+S0[0] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+S0[1] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+S0[2] <= X[2].DB_MAX_OUTPUT_PORT_TYPE
+S0[3] <= X[3].DB_MAX_OUTPUT_PORT_TYPE
+S1[0] <= X[4].DB_MAX_OUTPUT_PORT_TYPE
+S1[1] <= X[5].DB_MAX_OUTPUT_PORT_TYPE
+S1[2] <= X[6].DB_MAX_OUTPUT_PORT_TYPE
+S1[3] <= X[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|LED7SEG_VHDL:2
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|LED7SEG_VHDL:LED6
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DIVISOR_VETOR02:inst3
+X[0] => S1[0].DATAIN
+X[1] => S1[1].DATAIN
+X[2] => S1[2].DATAIN
+S1[0] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+S1[1] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+S1[2] <= X[2].DB_MAX_OUTPUT_PORT_TYPE
+S1[3] <= <GND>
+
+
+|lab07toptemp|LED7SEG_VHDL:LED7
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|LED7SEG_VHDL:4
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|DIVISOR_VETOR:DIV2
+X[0] => S0[0].DATAIN
+X[1] => S0[1].DATAIN
+X[2] => S0[2].DATAIN
+X[3] => S0[3].DATAIN
+X[4] => S1[0].DATAIN
+X[5] => S1[1].DATAIN
+X[6] => S1[2].DATAIN
+X[7] => S1[3].DATAIN
+S0[0] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+S0[1] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+S0[2] <= X[2].DB_MAX_OUTPUT_PORT_TYPE
+S0[3] <= X[3].DB_MAX_OUTPUT_PORT_TYPE
+S1[0] <= X[4].DB_MAX_OUTPUT_PORT_TYPE
+S1[1] <= X[5].DB_MAX_OUTPUT_PORT_TYPE
+S1[2] <= X[6].DB_MAX_OUTPUT_PORT_TYPE
+S1[3] <= X[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab07toptemp|LED7SEG_VHDL:LED5
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN0
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[0] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN0
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[1] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN0
+X[2] => S.IN1
+X[2] => S.IN1
+X[2] => S.IN0
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+X[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+

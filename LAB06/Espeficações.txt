@@ -1,0 +1,8 @@
+LAB06 - DETECTOR DE SEQUENCIA
+
+Utilizando o seu numero de R.A. (e.g. 2065384) selecione os DOIS ALGARISMOS MENOS SIGNIFICATIVOS (i.e., 84 neste exemplo) e suponha que os mesmos já são números na base hexadecimal, ou seja, 84 na base hexa.  Faça a conversão para a base binária (neste exemplo seria 8 = 1000 e 4=0100) para formar uma string de dígitos binários (i.e., neste caso 1000_0100). 
+
+Projete e implemente na placa um detector de sequencia de 7 bits para ESTA string considerando os 7 bits mais ou menos significativos somente. Faça somente um detector, ou seja, escolha se fará para os 7 bits mais (e.g., 1000_010 ) ou para os 7 bits menos (e.g., 000_0100) significativos da string. Apresente no digito HEX0 da placa EM QUE ESTADO ESTÁ A MÁQUINA DE ESTADOS DETECTORA DE SEQUENCIA.
+Após a simulação, APRESENTE O SISTEMA FUNCIONANDO NA PLACA. Para simular a detecção de valores, utilize a(s) chave(s) como entrada de bits.
+
+Colete a rubrica e faça o envio da mesma. Não é necessário fazer upload de arquivos pois este LAB será REUTILIZADO no lab 07.

@@ -1,0 +1,94 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity CONTROLADOR is
+    port (  
+        CLK : in std_logic;
+        CLK_STOP : in std_logic;
+        DESABLE_CLK_STOP : in std_logic; -- Sinal para desabilitar o CLK_STOP
+        MEMORYCONTROL : out std_logic;
+        PISOCONTROL : out std_logic;
+        RESETCONTROL : OUT std_logic;
+        DETECTORCONTROL : out std_logic;
+        ESTADO : out std_logic_vector(3 downto 0) -- Saída do estado atual do contador
+    );
+end entity CONTROLADOR; 
+
+architecture Behavioral of CONTROLADOR is
+
+component CONTADOR9 is
+    port (
+        CLK : in std_logic;
+        CLEAR : in std_logic;
+        PRESET : in std_logic;
+        ENABLE : in std_logic := '1'; -- Habilita o contador por padrão
+        CARRY_OUT : out std_logic;
+        Q_OUT : out std_logic_vector(3 downto 0)
+    );
+end component CONTADOR9;
+
+signal qout : std_logic_vector(3 downto 0);
+signal contador_enable : std_logic := '1'; -- Sinal de habilitação do contador, ativado por padrão
+signal clk_stops : std_logic; -- Sinal de parada do contador, inicializado como '0'
+begin
+    
+    -- O contador é habilitado (contador_enable = '1') quando CLK_STOP é '0'.
+    -- O contador é desabilitado (contador_enable = '0') quando CLK_STOP é '1'.
+    
+    
+    process(CLK_STOP,clk)
+    begin
+        if DESABLE_CLK_STOP = '0' then
+            clk_stops <= '0'; -- Desativa o sinal de parada do contador se DESABLE_CLK_STOP for '1'
+            contador_enable <= '1'; -- Habilita o contador
+        elsif CLK_STOP = '1' then
+            clk_stops <= '1'; -- Ativa o sinal de parada do contador
+            contador_enable <= '0'; -- Desabilita o contador
+        else
+            clk_stops <= '0'; -- Desativa o sinal de parada do contador
+            contador_enable <= '1'; -- Habilita o contador
+        end if;
+    end process;
+
+    inst_CONTADOR9 : CONTADOR9
+        port map (
+            CLK => CLK,
+            CLEAR => '0', -- Clear não utilizado, pode ser ajustado conforme necessário
+            PRESET => '0', -- Preset não utilizado, pode ser ajustado conforme necessário
+            ENABLE => contador_enable,
+            CARRY_OUT => open, -- Sinal de carry out não utilizado, pode ser ajustado conforme necessário
+            Q_OUT => qout
+        );
+
+
+process(CLK)
+begin
+    
+        if qout = "0000" then
+            MEMORYCONTROL     <= '0';
+            PISOCONTROL       <= '1';  -- Carrega no SIPO
+            DETECTORCONTROL   <= '0';
+
+        elsif qout = "1001" then
+            MEMORYCONTROL     <= '1';  -- Avança endereço
+            PISOCONTROL       <= '0';
+            DETECTORCONTROL   <= '0';
+            RESETCONTROL <= '1'; -- Reseta o contador
+        else
+            MEMORYCONTROL     <= '0';
+            PISOCONTROL       <= '0';
+            RESETCONTROL <= '0'; -- Reseta o contador apenas no estado 1001
+            -- DETECTORCONTROL só é ativado se clk_stops for 0 e não estiver nos ciclos especiais
+            if clk_stops = '0' then
+                DETECTORCONTROL <= '1';
+            else
+                DETECTORCONTROL <= '0';
+            end if;
+        end if;
+end process;
+
+
+
+    ESTADO <= qout; -- Saída do estado atual do contador
+
+end architecture Behavioral;

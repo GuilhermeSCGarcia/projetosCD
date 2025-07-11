@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_chave0",
+					"strict" : false
+				},
+				{
+					"name" : "led_seqdetectada",
+					"strict" : false
+				},
+				{
+					"name" : "Q0_out",
+					"strict" : false
+				},
+				{
+					"name" : "Q1_out",
+					"strict" : false
+				},
+				{
+					"name" : "Q2_out",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "M0",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

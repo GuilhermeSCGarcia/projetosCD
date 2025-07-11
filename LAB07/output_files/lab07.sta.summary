@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -5.346
+TNS   : -105.130
+
+Type  : Slow 1200mV 85C Model Setup 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -0.406
+TNS   : -0.752
+
+Type  : Slow 1200mV 85C Model Hold 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -0.160
+TNS   : -0.299
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -2.422
+TNS   : -4.844
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -4.931
+TNS   : -96.223
+
+Type  : Slow 1200mV 0C Model Setup 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -0.327
+TNS   : -0.603
+
+Type  : Slow 1200mV 0C Model Hold 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -0.118
+TNS   : -0.211
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -2.333
+TNS   : -4.666
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -2.157
+TNS   : -32.584
+
+Type  : Fast 1200mV 0C Model Setup 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -0.046
+TNS   : -0.061
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : 0.232
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -30.274
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CONTROLADOR:inst|CONTADOR9:inst_CONTADOR9|FFJK:U_FF_JK_0|Q_reg'
+Slack : -1.000
+TNS   : -2.000
+
+------------------------------------------------------------

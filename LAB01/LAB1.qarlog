@@ -1,0 +1,16 @@
+Quartus Prime Archive log --	C:/ProjetosCD/LAB01/LAB1.qarlog
+
+Archive:	C:/ProjetosCD/LAB01/LAB1.qar
+Date:		Thu Jul 10 22:39:44 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/ProjetosCD/LAB01/LAB1.bdf
+C:/ProjetosCD/LAB01/LAB1.qpf
+C:/ProjetosCD/LAB01/LAB1.qsf
+C:/ProjetosCD/LAB01/Waveform.vwf
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 5 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

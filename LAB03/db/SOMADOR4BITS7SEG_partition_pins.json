@@ -1,0 +1,205 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "S00",
+					"strict" : false
+				},
+				{
+					"name" : "S01",
+					"strict" : false
+				},
+				{
+					"name" : "S02",
+					"strict" : false
+				},
+				{
+					"name" : "S03",
+					"strict" : false
+				},
+				{
+					"name" : "S04",
+					"strict" : false
+				},
+				{
+					"name" : "S05",
+					"strict" : false
+				},
+				{
+					"name" : "S06",
+					"strict" : false
+				},
+				{
+					"name" : "S10",
+					"strict" : false
+				},
+				{
+					"name" : "S11",
+					"strict" : false
+				},
+				{
+					"name" : "S12",
+					"strict" : false
+				},
+				{
+					"name" : "S13",
+					"strict" : false
+				},
+				{
+					"name" : "S14",
+					"strict" : false
+				},
+				{
+					"name" : "S15",
+					"strict" : false
+				},
+				{
+					"name" : "S16",
+					"strict" : false
+				},
+				{
+					"name" : "S40",
+					"strict" : false
+				},
+				{
+					"name" : "S41",
+					"strict" : false
+				},
+				{
+					"name" : "S42",
+					"strict" : false
+				},
+				{
+					"name" : "S43",
+					"strict" : false
+				},
+				{
+					"name" : "S44",
+					"strict" : false
+				},
+				{
+					"name" : "S45",
+					"strict" : false
+				},
+				{
+					"name" : "S46",
+					"strict" : false
+				},
+				{
+					"name" : "S50",
+					"strict" : false
+				},
+				{
+					"name" : "S51",
+					"strict" : false
+				},
+				{
+					"name" : "S52",
+					"strict" : false
+				},
+				{
+					"name" : "S53",
+					"strict" : false
+				},
+				{
+					"name" : "S54",
+					"strict" : false
+				},
+				{
+					"name" : "S55",
+					"strict" : false
+				},
+				{
+					"name" : "S56",
+					"strict" : false
+				},
+				{
+					"name" : "LED0",
+					"strict" : false
+				},
+				{
+					"name" : "LED1",
+					"strict" : false
+				},
+				{
+					"name" : "LED2",
+					"strict" : false
+				},
+				{
+					"name" : "LED3",
+					"strict" : false
+				},
+				{
+					"name" : "LED4",
+					"strict" : false
+				},
+				{
+					"name" : "LED5",
+					"strict" : false
+				},
+				{
+					"name" : "LED6",
+					"strict" : false
+				},
+				{
+					"name" : "LED7",
+					"strict" : false
+				},
+				{
+					"name" : "LED9",
+					"strict" : false
+				},
+				{
+					"name" : "LED8",
+					"strict" : false
+				},
+				{
+					"name" : "SW9",
+					"strict" : false
+				},
+				{
+					"name" : "A0",
+					"strict" : false
+				},
+				{
+					"name" : "PB0",
+					"strict" : false
+				},
+				{
+					"name" : "A3",
+					"strict" : false
+				},
+				{
+					"name" : "A2",
+					"strict" : false
+				},
+				{
+					"name" : "A1",
+					"strict" : false
+				},
+				{
+					"name" : "B0",
+					"strict" : false
+				},
+				{
+					"name" : "B3",
+					"strict" : false
+				},
+				{
+					"name" : "B2",
+					"strict" : false
+				},
+				{
+					"name" : "B1",
+					"strict" : false
+				},
+				{
+					"name" : "PB1",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

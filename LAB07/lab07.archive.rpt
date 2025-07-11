@@ -1,0 +1,115 @@
+Archive Project report for lab07
+Thu Jul 10 22:38:05 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Thu Jul 10 22:38:05 2025 ;
+; Revision Name          ; lab07                                 ;
+; Top-level Entity Name  ; lab07toptemp                          ;
+; Family                 ; MAX 10                                ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/PROJETOS2/LAB07/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/PROJETOS2/LAB07/lab07.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'lab07.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4830 megabytes
+    Info: Processing ended: Thu Jul 10 22:38:05 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++--------------------------------------------------------------+
+; Files Archived                                               ;
++--------------------------------------------------------------+
+; File Name                                                    ;
++--------------------------------------------------------------+
+; c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf ;
+; CONTADOR.vhd                                                 ;
+; CONTADOR1FF.vhd                                              ;
+; CONTADOR9.vhd                                                ;
+; CONTADORF.vhd                                                ;
+; CONTROLADOR.vhd                                              ;
+; DETECTOR.vhd                                                 ;
+; divisor.vhd                                                  ;
+; DIVISOR_VETOR02.vhd                                          ;
+; FFD.vhd                                                      ;
+; FFJK.vhd                                                     ;
+; lab07.qpf                                                    ;
+; lab07.qsf                                                    ;
+; lab07toptemp.bdf                                             ;
+; LED7SEG.vhd                                                  ;
+; LOGICACONTADORF.vhd                                          ;
+; LOGICADETECTOR.vhd                                           ;
+; MSB.vhd                                                      ;
+; MULTIPLEX18.vhd                                              ;
+; multiplex24.vhd                                              ;
+; MULTIPLEX81.vhd                                              ;
+; PISO8BITS.vhd                                                ;
+; rom.bsf                                                      ;
+; rom.cmp                                                      ;
+; rom.qip                                                      ;
+; rom.vhd                                                      ;
+; rom2.bsf                                                     ;
+; rom2.cmp                                                     ;
+; rom2.qip                                                     ;
+; rom2.vhd                                                     ;
+; rom_256_8.hex                                                ;
+; rom_decrescente.hex                                          ;
+; Timing_Reference.vhd                                         ;
+; Waveform.vwf                                                 ;
+; Waveform1.vwf                                                ;
+; Waveform2.vwf                                                ;
+; Waveform3.vwf                                                ;
+; Waveform4.vwf                                                ;
+; Waveform5.vwf                                                ;
+; Waveform6.vwf                                                ;
++--------------------------------------------------------------+
+
+

@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity BLOCO8 is
+    Port (
+        A0, A1, A2, A3: in std_logic;
+		  B0, B1, B2, B3: in std_logic;
+		  C0, C1, C2, C3: in std_logic;
+		  D0, D1, D2, D3: in std_logic;
+		  S0, S1        : in std_logic;
+		  X0, X1, X2, X3: out std_logic;
+    );
+end BLOCO8;
+
+architecture LOGICA of BLOCO8 is
+begin
+	 X0 <= (A0 and not(S0) and not(S1)) or (B0 and not(S1) and (S0)) or (C0 and S1 and not(S0)) or (D0 and S1 and S0);
+    X1 <= (A1 and not(S0) and not(S1)) or (B1 and not(S1) and (S0)) or (C1 and S1 and not(S0)) or (D1 and S1 and S0);
+	 X2 <= (A2 and not(S0) and not(S1)) or (B2 and not(S1) and (S0)) or (C2 and S1 and not(S0)) or (D2 and S1 and S0);
+	 X3 <= (A3 and not(S0) and not(S1)) or (B3 and not(S1) and (S0)) or (C3 and S1 and not(S0)) or (D3 and S1 and S0);
+
+end LOGICA;

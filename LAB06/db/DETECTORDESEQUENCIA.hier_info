@@ -1,0 +1,190 @@
+|DETECTORDESEQUENCIA_TOP
+clk => FFJK:ffjk0.clk
+clk => FFJK:ffjk1.clk
+clk => FFJK:ffjk2.clk
+M0 => state_machine_jk:maq_estado_jk.M0
+M0 => state_machine_jk:maq_estado_jk.M1
+M0 => led_chave0.DATAIN
+M1 => ~NO_FANOUT~
+led_chave0 <= M0.DB_MAX_OUTPUT_PORT_TYPE
+led_seqdetectada <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+Q0_out <= FFJK:ffjk0.Q
+Q1_out <= FFJK:ffjk1.Q
+Q2_out <= FFJK:ffjk2.Q
+Hex_out[0] <= LED7SEG_VHDL:led7seg.S0
+Hex_out[1] <= LED7SEG_VHDL:led7seg.S1
+Hex_out[2] <= LED7SEG_VHDL:led7seg.S2
+Hex_out[3] <= LED7SEG_VHDL:led7seg.S3
+Hex_out[4] <= LED7SEG_VHDL:led7seg.S4
+Hex_out[5] <= LED7SEG_VHDL:led7seg.S5
+Hex_out[6] <= LED7SEG_VHDL:led7seg.S6
+
+
+|DETECTORDESEQUENCIA_TOP|FFJK:ffjk0
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DETECTORDESEQUENCIA_TOP|FFJK:ffjk1
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DETECTORDESEQUENCIA_TOP|FFJK:ffjk2
+clk => Q_reg.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DETECTORDESEQUENCIA_TOP|state_machine_jk:maq_estado_jk
+M0 => J0.IN0
+M0 => J1.IN0
+M0 => J1.IN0
+M0 => K2.IN0
+M0 => J0.IN0
+M0 => J1.IN0
+M0 => J1.IN0
+M0 => J2.IN0
+M0 => K2.IN0
+M1 => J0.IN1
+M1 => J0.IN1
+M1 => J1.IN0
+M1 => J0.IN0
+M1 => J1.IN1
+M1 => J1.IN1
+Q0 => J0.IN1
+Q0 => J0.IN1
+Q0 => K0.IN1
+Q0 => J1.IN1
+Q0 => J1.IN1
+Q0 => J1.IN1
+Q0 => J1.IN1
+Q0 => J2.IN1
+Q0 => K2.IN1
+Q0 => J0.IN1
+Q0 => J0.IN1
+Q0 => J0.IN1
+Q0 => J1.IN1
+Q0 => J1.IN1
+Q0 => J1.IN1
+Q0 => J2.IN1
+Q0 => J2.IN1
+Q0 => K2.IN1
+Q1 => J0.IN0
+Q1 => J0.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => K1.IN1
+Q1 => J2.IN1
+Q1 => J2.IN1
+Q1 => K2.IN1
+Q1 => J0.IN1
+Q1 => J0.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => J1.IN1
+Q1 => J2.IN1
+Q1 => K2.IN1
+Q1 => K2.IN0
+Q2 => J0.IN1
+Q2 => J0.IN1
+Q2 => K2.IN1
+Q2 => K2.IN1
+Q2 => K2.IN1
+Q2 => K2.IN1
+Q2 => K2.IN1
+Q2 => J0.IN1
+Q2 => J0.IN1
+Q2 => J1.IN1
+Q2 => J1.IN1
+Q2 => J2.IN1
+Q2 => J2.IN1
+Q2 => J2.IN1
+J0 <= J0.DB_MAX_OUTPUT_PORT_TYPE
+K0 <= K0.DB_MAX_OUTPUT_PORT_TYPE
+J1 <= J1.DB_MAX_OUTPUT_PORT_TYPE
+K1 <= K1.DB_MAX_OUTPUT_PORT_TYPE
+J2 <= J2.DB_MAX_OUTPUT_PORT_TYPE
+K2 <= K2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DETECTORDESEQUENCIA_TOP|LED7SEG_VHDL:led7seg
+A => S0.IN0
+A => S0.IN0
+A => S1.IN0
+A => S0.IN0
+A => S0.IN0
+A => S4.IN0
+A => S5.IN0
+B => S0.IN1
+B => S0.IN1
+B => S1.IN0
+B => S0.IN1
+B => S0.IN1
+B => S4.IN1
+B => S5.IN1
+C => S0.IN1
+C => S1.IN1
+C => S1.IN1
+C => S2.IN1
+C => S2.IN1
+C => S5.IN1
+C => S6.IN1
+C => S0.IN1
+C => S0.IN1
+C => S0.IN1
+C => S4.IN0
+D => S0.IN1
+D => S0.IN1
+D => S0.IN1
+D => S1.IN1
+D => S1.IN1
+D => S3.IN1
+D => S4.IN1
+D => S4.IN1
+D => S5.IN1
+D => S6.IN1
+D => S0.IN1
+D => S1.IN1
+D => S1.IN1
+D => S2.IN1
+D => S3.IN1
+D => S6.IN1
+S0 <= S0.DB_MAX_OUTPUT_PORT_TYPE
+S1 <= S1.DB_MAX_OUTPUT_PORT_TYPE
+S2 <= S2.DB_MAX_OUTPUT_PORT_TYPE
+S3 <= S3.DB_MAX_OUTPUT_PORT_TYPE
+S4 <= S4.DB_MAX_OUTPUT_PORT_TYPE
+S5 <= S5.DB_MAX_OUTPUT_PORT_TYPE
+S6 <= S6.DB_MAX_OUTPUT_PORT_TYPE
+
+

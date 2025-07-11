@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity volei is
+    port (
+        timeA : in std_logic;
+        timeB : in std_logic;
+        placarA : out std_logic_vector(7 downto 0);
+        placarB : out std_logic_vector(7 downto 0);
+        reset: in std_logic;
+        setA : out integer range 0 to 3;
+        setB : out integer range 0 to 3
+    );
+end volei;
+
+
+architecture beavorial of volei is
+    signal scoreA : integer range 0 to 100 := 0;
+    signal scoreB : integer range 0 to 100 := 0;
+    signal setA: integer range 0 to 3 := 0;
+    signal setB: integer range 0 to 3 := 0;
+
+begin
+
+    process(timeA,timeB, reset)
+    begin
+        if reset = '1' then
+            scoreA <= 0;
+            scoreB <= 0;
+            setA <= 0;
+            setB <= 0;
+        end if;
+
+        if timeA = '0' then
+            scoreA <= scoreA + 1;
+        end if;
+
+        if timeB = '0' then
+            scoreB <= scoreB + 1;
+        end if;
+
+        if scoreA > 25 and scoreA + 2 > scoreB then
+            setA <= setA + 1;
+            scoreA <= 0;
+            scoreB <= 0;
+        end if;
+        if scoreB > 25 and scoreB + 2 > scoreA then
+            setB <= setB + 1;
+            scoreA <= 0;
+            scoreB <= 0;
+        end if;
+    end process;
+
+
+    placarA <= std_logic(to_unsigned(scoreA, 8));
+    placarB <= std_logic(to_unsigned(scoreB, 8));
+    setA <= std_logic(to_unsigned(setA, 4));
+    setB <= std_logic(to_unsigned(setB, 4));
+
+end beavorial;
+

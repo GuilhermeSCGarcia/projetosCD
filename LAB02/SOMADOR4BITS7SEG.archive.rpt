@@ -1,0 +1,193 @@
+Archive Project report for SOMADOR4BITS7SEG
+Mon Apr 28 19:06:56 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Mon Apr 28 19:06:56 2025 ;
+; Revision Name          ; SOMADOR4BITS7SEG                      ;
+; Top-level Entity Name  ; SOMADOR4BITS7SEG                      ;
+; Family                 ; MAX 10                                ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Compilation database and output' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+    Info: Report files
+    Info: Programming output files
+    Info: Version-incompatible compilation database files
+    Info: Incremental compilation and Rapid Recompile database files (version-incompatible)
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/CD/LAB02/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/CD/LAB02/LAB02.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'SOMADOR4BITS7SEG.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Mon Apr 28 19:06:56 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++-------------------------------------------------------------------------------------+
+; Files Archived                                                                      ;
++-------------------------------------------------------------------------------------+
+; File Name                                                                           ;
++-------------------------------------------------------------------------------------+
+; assignment_defaults.qdf                                                             ;
+; db/SOMADOR4BITS7SEG.(0).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(0).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(1).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(1).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(2).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(2).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(3).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(3).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(4).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(4).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(5).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(5).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(6).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(6).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.(7).cnf.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.(7).cnf.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.archive.qmsg                                                    ;
+; db/SOMADOR4BITS7SEG.asm.qmsg                                                        ;
+; db/SOMADOR4BITS7SEG.asm.rdb                                                         ;
+; db/SOMADOR4BITS7SEG.asm_labs.ddb                                                    ;
+; db/SOMADOR4BITS7SEG.cbx.xml                                                         ;
+; db/SOMADOR4BITS7SEG.cmp.bpm                                                         ;
+; db/SOMADOR4BITS7SEG.cmp.cdb                                                         ;
+; db/SOMADOR4BITS7SEG.cmp.hdb                                                         ;
+; db/SOMADOR4BITS7SEG.cmp.idb                                                         ;
+; db/SOMADOR4BITS7SEG.cmp.logdb                                                       ;
+; db/SOMADOR4BITS7SEG.cmp.rdb                                                         ;
+; db/SOMADOR4BITS7SEG.cmp_merge.kpt                                                   ;
+; db/SOMADOR4BITS7SEG.db_import.qmsg                                                  ;
+; db/SOMADOR4BITS7SEG.db_info                                                         ;
+; db/SOMADOR4BITS7SEG.eda.qmsg                                                        ;
+; db/SOMADOR4BITS7SEG.fit.qmsg                                                        ;
+; db/SOMADOR4BITS7SEG.hier_info                                                       ;
+; db/SOMADOR4BITS7SEG.hif                                                             ;
+; db/SOMADOR4BITS7SEG.lpc.html                                                        ;
+; db/SOMADOR4BITS7SEG.lpc.rdb                                                         ;
+; db/SOMADOR4BITS7SEG.lpc.txt                                                         ;
+; db/SOMADOR4BITS7SEG.map.ammdb                                                       ;
+; db/SOMADOR4BITS7SEG.map.bpm                                                         ;
+; db/SOMADOR4BITS7SEG.map.cdb                                                         ;
+; db/SOMADOR4BITS7SEG.map.hdb                                                         ;
+; db/SOMADOR4BITS7SEG.map.kpt                                                         ;
+; db/SOMADOR4BITS7SEG.map.qmsg                                                        ;
+; db/SOMADOR4BITS7SEG.map.rdb                                                         ;
+; db/SOMADOR4BITS7SEG.map_bb.cdb                                                      ;
+; db/SOMADOR4BITS7SEG.map_bb.hdb                                                      ;
+; db/SOMADOR4BITS7SEG.pplq.rdb                                                        ;
+; db/SOMADOR4BITS7SEG.pre_map.hdb                                                     ;
+; db/SOMADOR4BITS7SEG.restore.qmsg                                                    ;
+; db/SOMADOR4BITS7SEG.root_partition.map.reg_db.cdb                                   ;
+; db/SOMADOR4BITS7SEG.routing.rdb                                                     ;
+; db/SOMADOR4BITS7SEG.rtlv.hdb                                                        ;
+; db/SOMADOR4BITS7SEG.rtlv_sg.cdb                                                     ;
+; db/SOMADOR4BITS7SEG.rtlv_sg_swap.cdb                                                ;
+; db/SOMADOR4BITS7SEG.sld_design_entry.sci                                            ;
+; db/SOMADOR4BITS7SEG.sld_design_entry_dsc.sci                                        ;
+; db/SOMADOR4BITS7SEG.smart_action.txt                                                ;
+; db/SOMADOR4BITS7SEG.sta.qmsg                                                        ;
+; db/SOMADOR4BITS7SEG.sta.rdb                                                         ;
+; db/SOMADOR4BITS7SEG.sta_cmp.7_slow_1200mv_85c.tdb                                   ;
+; db/SOMADOR4BITS7SEG.tis_db_list.ddb                                                 ;
+; db/SOMADOR4BITS7SEG.tiscmp.fast_1200mv_0c.ddb                                       ;
+; db/SOMADOR4BITS7SEG.tiscmp.fastest_slow_1200mv_0c.ddb                               ;
+; db/SOMADOR4BITS7SEG.tiscmp.fastest_slow_1200mv_85c.ddb                              ;
+; db/SOMADOR4BITS7SEG.tiscmp.slow_1200mv_0c.ddb                                       ;
+; db/SOMADOR4BITS7SEG.tiscmp.slow_1200mv_85c.ddb                                      ;
+; db/SOMADOR4BITS7SEG.tmw_info                                                        ;
+; db/SOMADOR4BITS7SEG.vpr.ammdb                                                       ;
+; db/SOMADOR4BITS7SEG.zippleback_io_sim_cache.ff_0c_fast.hsd                          ;
+; db/SOMADOR4BITS7SEG.zippleback_io_sim_cache.ii_0c_slow.hsd                          ;
+; db/SOMADOR4BITS7SEG.zippleback_io_sim_cache.ii_85c_slow.hsd                         ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.db_info                         ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.cmp.cdb          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.cmp.dfp          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.cmp.hdb          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.cmp.logdb        ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.cmp.rcfdb        ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.cdb          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.dpi          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.hbdb.cdb     ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.hbdb.hb_info ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.hbdb.hdb     ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.hbdb.sig     ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.hdb          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.root_partition.map.kpt          ;
+; incremental_db/compiled_partitions/SOMADOR4BITS7SEG.rrp.hdb                         ;
+; INVERSOR.bdf                                                                        ;
+; LAB02.qpf                                                                           ;
+; MULPLEX4.bdf                                                                        ;
+; MULTIPLEX.bdf                                                                       ;
+; output_files/LED7SEG.vhd                                                            ;
+; output_files/SOMADOR4BITS7SEG.asm.rpt                                               ;
+; output_files/SOMADOR4BITS7SEG.eda.rpt                                               ;
+; output_files/SOMADOR4BITS7SEG.fit.rpt                                               ;
+; output_files/SOMADOR4BITS7SEG.fit.smsg                                              ;
+; output_files/SOMADOR4BITS7SEG.fit.summary                                           ;
+; output_files/SOMADOR4BITS7SEG.flow.rpt                                              ;
+; output_files/SOMADOR4BITS7SEG.jdi                                                   ;
+; output_files/SOMADOR4BITS7SEG.map.rpt                                               ;
+; output_files/SOMADOR4BITS7SEG.map.summary                                           ;
+; output_files/SOMADOR4BITS7SEG.pin                                                   ;
+; output_files/SOMADOR4BITS7SEG.pof                                                   ;
+; output_files/SOMADOR4BITS7SEG.sld                                                   ;
+; output_files/SOMADOR4BITS7SEG.sof                                                   ;
+; output_files/SOMADOR4BITS7SEG.sta.rpt                                               ;
+; output_files/SOMADOR4BITS7SEG.sta.summary                                           ;
+; REG_PARALELO.bdf                                                                    ;
+; SOMA1BIT.bdf                                                                        ;
+; SOMA4BITS.bdf                                                                       ;
+; SOMADOR4BITS7SEG.bdf                                                                ;
+; SOMADOR4BITS7SEG.qsf                                                                ;
+; Waveform.vwf                                                                        ;
+; Waveform1.vwf                                                                       ;
++-------------------------------------------------------------------------------------+
+
+

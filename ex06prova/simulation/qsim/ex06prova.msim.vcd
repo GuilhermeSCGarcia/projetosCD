@@ -1,0 +1,130 @@
+$comment
+	File created using the following command:
+		vcd file ex06prova.msim.vcd -direction
+$end
+$date
+	Wed Jun 04 16:23:17 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module lab05_vhd_vec_tst $end
+$var wire 1 ! clk1 $end
+$var wire 1 " Saida [6] $end
+$var wire 1 # Saida [5] $end
+$var wire 1 $ Saida [4] $end
+$var wire 1 % Saida [3] $end
+$var wire 1 & Saida [2] $end
+$var wire 1 ' Saida [1] $end
+$var wire 1 ( Saida [0] $end
+
+$scope module i1 $end
+$var wire 1 ) gnd $end
+$var wire 1 * vcc $end
+$var wire 1 + unknown $end
+$var wire 1 , devoe $end
+$var wire 1 - devclrn $end
+$var wire 1 . devpor $end
+$var wire 1 / ww_devoe $end
+$var wire 1 0 ww_devclrn $end
+$var wire 1 1 ww_devpor $end
+$var wire 1 2 ww_clk1 $end
+$var wire 1 3 ww_Saida [6] $end
+$var wire 1 4 ww_Saida [5] $end
+$var wire 1 5 ww_Saida [4] $end
+$var wire 1 6 ww_Saida [3] $end
+$var wire 1 7 ww_Saida [2] $end
+$var wire 1 8 ww_Saida [1] $end
+$var wire 1 9 ww_Saida [0] $end
+$var wire 1 : \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [4] $end
+$var wire 1 ; \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [3] $end
+$var wire 1 < \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [2] $end
+$var wire 1 = \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [1] $end
+$var wire 1 > \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [0] $end
+$var wire 1 ? \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ [4] $end
+$var wire 1 @ \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ [3] $end
+$var wire 1 A \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ [2] $end
+$var wire 1 B \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ [1] $end
+$var wire 1 C \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ [0] $end
+$var wire 1 D \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 E \~QUARTUS_CREATED_UNVM~~busy\ $end
+$var wire 1 F \~QUARTUS_CREATED_ADC1~~eoc\ $end
+$var wire 1 G \~QUARTUS_CREATED_ADC2~~eoc\ $end
+$var wire 1 H \Saida[0]~output_o\ $end
+$var wire 1 I \Saida[1]~output_o\ $end
+$var wire 1 J \Saida[2]~output_o\ $end
+$var wire 1 K \Saida[3]~output_o\ $end
+$var wire 1 L \Saida[4]~output_o\ $end
+$var wire 1 M \Saida[5]~output_o\ $end
+$var wire 1 N \Saida[6]~output_o\ $end
+$var wire 1 O \clk1~input_o\ $end
+$var wire 1 P \ME|Q2~0_combout\ $end
+$var wire 1 Q \ME|Q2~q\ $end
+$var wire 1 R \ME|Q1~0_combout\ $end
+$var wire 1 S \ME|Q1~q\ $end
+$var wire 1 T \ME|Q0~0_combout\ $end
+$var wire 1 U \ME|Q0~q\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+0)
+1*
+x+
+1,
+1-
+1.
+1/
+10
+11
+x2
+0D
+zE
+zF
+zG
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+xO
+0P
+0Q
+0R
+0S
+1T
+0U
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+$end
+#1000000

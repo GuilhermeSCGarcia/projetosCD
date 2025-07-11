@@ -1,0 +1,25 @@
+Quartus Prime Archive log --	C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qarlog
+
+Archive:	C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qar
+Date:		Wed May 21 08:53:41 2025
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/LAB03/SOMA1BIT.bdf
+C:/LAB03/SOMA4BITS.bdf
+C:/LAB2/LAB02__restored/MULPLEX4.bdf
+C:/LAB2/LAB02__restored/MULTIPLEX.bdf
+C:/ProjetosCD/LAB03/REG_PARALELO.bdf
+C:/ProjetosCD/LAB03/output_files/LED7SEG.vhd
+C:/ProjetosCD/LAB04/CONTADOR.vhd
+C:/ProjetosCD/LAB04/J1.vhd
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.bdf
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qpf
+C:/ProjetosCD/LAB04/LAB04_MAQUINA_DE_ESTADO.qsf
+C:/ProjetosCD/LAB04/Waveform.vwf
+C:/Users/guiga/OneDrive/Área de Trabalho/Timing_Reference.vhd
+c:/intelfpga_lite/18.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

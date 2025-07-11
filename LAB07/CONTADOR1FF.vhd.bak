@@ -1,0 +1,69 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity CONTADOR1FF is
+    port(
+        clk : in std_logic;
+        ENABLE: in std_logic;
+        q_out: out std_logic_vector(7 downto 0);
+        c_out: out std_logic
+    );
+end entity CONTADOR1FF;
+
+
+architecture behavorial of CONTADOR1FF is
+
+    component CONTADORF is
+        port(
+            clk: in std_logic;
+            ENABLE: in std_logic;
+            q_out : out std_logic_vector(3 downto 0);
+            c_out: out std_logic
+        );
+    end component CONTADORF;
+
+    -- O componente FFD não é mais necessário aqui se não for instanciado diretamente.
+    -- Se você tiver um reset global ou outra lógica que use FFDs, mantenha-o.
+
+signal q_0_s: std_logic_vector(3 downto 0);
+signal c_out1: std_logic;
+signal c_out2: std_logic;
+signal q_1_s: std_logic_vector(3 downto 0);
+
+signal latched_carry_value: std_logic := '0'; -- Sinal interno para armazenar o carry
+begin
+
+    inst_contadorf_0 : CONTADORF
+        port map(
+            clk => clk,
+            ENABLE => ENABLE,
+            q_out => q_0_s,
+            c_out => c_out1
+        );
+
+    inst_contadorf_1 : CONTADORF
+        port map(
+            clk => clk,
+            ENABLE => c_out1,
+            q_out => q_1_s,
+            c_out => c_out2
+        );
+
+    q_out <= q_1_s & q_0_s; -- Concatena os dois vetores de saída
+
+    -- Processo para "salvar" (latch) o '1' quando c_out2 (pulso de FF->00) ocorre.
+    -- O latched_carry_value permanecerá '1' após ser setado.
+    -- Assumindo que FFD.vhd (e portanto o comportamento síncrono desejado) usa falling_edge(clk).
+    process(clk)
+    begin
+        if falling_edge(clk) then      -- Usa a borda do clock principal
+            if c_out2 = '1' then       -- Verifica o valor de c_out2 (pulso de transbordo)
+                latched_carry_value <= not latched_carry_value;    -- Seta o latch
+            end if;
+            -- Se um reset para este latch for necessário, ele seria adicionado aqui (ex: elsif RESET_LATCH = '1' then latched_carry_value <= '0';)
+        end if;
+    
+    end process;
+
+    c_out <= latched_carry_value; -- A porta de saída c_out reflete o valor "salvo"
+end behavorial;
